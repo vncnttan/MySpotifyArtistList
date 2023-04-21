@@ -1,9 +1,9 @@
 import Head from "next/head";
+import Layout from "@component/components/Layout";
 export default function Search(){
     return (
-        <>
-        <Head> <title>investNJoy: Search</title> </Head>
-        <h1>Search Page</h1>
-        </>
+        <Layout title="investNJoy: Search">
+            <h1>Search Page</h1>
+        </Layout>
     );
 }

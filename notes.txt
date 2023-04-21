@@ -1,0 +1,5 @@
+Secondary White: BEBFCD
+Secondary Gray: 717C84
+Gray: 555C61
+Secondary: 212A38
+Black: #171716
