@@ -1,0 +1,19 @@
+#navbar{
+    background-color: var(--background-secondary-color);
+    overflow: hidden;
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navbarbtn{
+    display: inline;
+    font-size: min(5rem, 20px);
+    padding: min(5rem, 20px);
+}
+
+.navbarbtn:hover{
+    color: var(--gray);
+}

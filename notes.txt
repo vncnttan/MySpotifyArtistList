@@ -6,7 +6,7 @@ Black: #171716
 
 
 - Typescript
-- Material UI
+- Font Awesome
 - Tailwind
 
 - Font Roboto
