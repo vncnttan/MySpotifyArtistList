@@ -1,12 +1,9 @@
-import Head from "next/head";
+import Layout from "@component/components/Layout";
 
 export default function Detail(){
     return (
-    <>
-    <Head>
-        <title>investNJoy: Detail</title>    
-    </Head>    
-    <h1>Detail Page</h1>
-    </>
+    <Layout title="Details">
+        <h1>Details</h1>
+    </Layout>
     );
 }

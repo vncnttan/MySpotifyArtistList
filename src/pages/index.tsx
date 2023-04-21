@@ -1,9 +1,10 @@
-import Head from "next/head";
+import Layout from "@component/components/Layout";
+
 export default function Home() {
+
   return (
-    <>
-    <Head> <title>investNJoy: List</title> </Head>
-    <h1>List Page</h1>
-    </>
+    <Layout title="List Page">
+      <h1>List Page</h1>
+    </Layout>
   );
 }

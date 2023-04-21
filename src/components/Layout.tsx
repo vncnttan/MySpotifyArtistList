@@ -10,7 +10,7 @@ export default function Layout({...props}:Props){
     return (
         <div>
             <Head>
-                <title>{props.title}</title>
+                <title>{"investNJoy | " + props.title}</title>
             </Head>
             <div>{props.children}</div>
         </div>

@@ -1,9 +1,9 @@
+import Layout from "@component/components/Layout";
 import Head from "next/head";
 export default function Favorites(){
     return (
-    <>
-    <Head> <title>investNJoy: Favorites</title> </Head>
-    <h1> Favorites Page </h1>
-    </>
+    <Layout title="Favorites">
+        <h1>Favorite Page</h1>
+    </Layout>
     );
 }
