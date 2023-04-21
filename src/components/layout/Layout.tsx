@@ -9,11 +9,11 @@ interface Props {
 
 export default function Layout({...props}:Props){
     return (
-        <div>
+        <div className={style.container}>
             <Head>
                 <title>{"investNJoy | " + props.title}</title>
             </Head>
-            <div className={style.component}>{props.children}</div>
+            <div>{props.children}</div>
         </div>
     )
 }
