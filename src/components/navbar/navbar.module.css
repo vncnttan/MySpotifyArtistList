@@ -15,10 +15,8 @@
     width: 33.3%;
 }
 
-@media only screen and (max-width: 990px){
-    .navbarbtn:active {
-        background-color: var(--gray);
-        transition: ease-in;
-        transition-duration: 100ms;
-    }
+.navbarbtn:hover, .navbarbtn:active{
+    background-color: var(--gray);
+    transition: ease-in;
+    transition-duration: 100ms;
 }

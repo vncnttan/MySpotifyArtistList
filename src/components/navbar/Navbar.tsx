@@ -6,7 +6,7 @@ import Link from "next/link"
 export default function Navbar(){
     return (
     <div id={style.navbar}>
-        <NavbarBtn icon={faHouse} tag="List" link={"/"}/>
+        <NavbarBtn icon={faHouse} tag="List" link={"/"} />
         <NavbarBtn icon={faHeart} tag="Favorites" link={"/favorites"}/>
         <NavbarBtn icon={faMagnifyingGlass} tag="Search" link={"/search"}/>
     </div>

@@ -12,7 +12,7 @@ interface Props{
 
 export default function NavbarBtn({...props}:Props){
     return (
-    <Link className={style.navbarbtn + "  text-center"} href={{ pathname: props.link }}>
+    <Link className={style.navbarbtn + "  text-center"} href={{ pathname: props.link }} >
         <FontAwesomeIcon icon={props.icon as IconProp} /> <br/>
         <span className="text-center">{props.tag}</span>
     </Link>
