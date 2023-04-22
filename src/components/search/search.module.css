@@ -1,0 +1,7 @@
+.searchbar{
+    background-color: var(--gray);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    width: calc(100% - 3.6rem);
+}
+

@@ -15,7 +15,13 @@
     width: 33.3%;
 }
 
-.navbarbtn:hover, .navbarbtn:active{
+/* .navbarbtn:hover, .navbarbtn:active{
+    background-color: var(--gray);
+    transition: ease-in;
+    transition-duration: 100ms;
+} */
+
+.active{
     background-color: var(--gray);
     transition: ease-in;
     transition-duration: 100ms;
