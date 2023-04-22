@@ -6,9 +6,26 @@
     margin: 1rem;
 }
 
+@media only screen and (max-width: 600px) {
+    .cardcontainer{
+        grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
 .cardcontent{
-    background-color: var(--gray);
+    background-color: var(--secondary-gray);
     border-radius: 1rem;
     text-align: center;
     padding: 1rem;
+}
+
+.stockname{
+    margin-bottom: 0.5rem;
+    font-size: smaller;
+    text-align: start;
+    font-weight: bolder;
+}
+
+.stockpercentage{
+    text-align: end;
 }
