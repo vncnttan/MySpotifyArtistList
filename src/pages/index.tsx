@@ -1,10 +1,13 @@
 import Layout from "@component/components/layout/Layout";
+import TitleHeader from "@component/components/title/TitleHeader";
+import StockCard from "@component/components/card/StockCard";
 
 export default function Home() {
 
   return (
     <Layout title="List Page">
-      <h1>List Page</h1>
+      <TitleHeader title="List Page" />
+      <StockCard />
     </Layout>
   );
 }

@@ -1,8 +1,10 @@
 import Layout from "@component/components/layout/Layout";
+import TitleHeader from "@component/components/title/TitleHeader";
+
 export default function Search(){
     return (
         <Layout title="investNJoy: Search">
-            <h1>Search Page</h1>
+            <TitleHeader title="Search Page"/>
         </Layout>
     );
 }
