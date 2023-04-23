@@ -4,23 +4,23 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-secondary-color: #BEBFCD;
+  --background-secondary-color: #1DB954;
   --background-start-rgb: 255, 255, 255;
   --background-end-rgb: 255, 255, 255;
   --highlight-secondary-gray: #c0c1bf;
   --secondary-gray: #e3e6e1;
-  --gray: #dddeef;
+  --gray: #116930;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-secondary-color: #1f252e;
+    --background-secondary-color: #1DB954;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
-    --highlight-secondary-gray: #345d74;
-    --secondary-gray: #172831;
-    --gray: #3d495c;
+    --highlight-secondary-gray: #127234;
+    --secondary-gray: #1DB954;
+    --gray: #116d31;
   }
 }
 
