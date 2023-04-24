@@ -38,7 +38,7 @@ interface Props{
 
 export function StockCardContent({...props}:Props){
     return (
-        <Link href={"/details/" + props.artistName}>
+        <Link href={"/detail/" + props.artistName + "/"}>
             <div className={style.cardcontent}>
                 <h1 className={style.stockname}> {props.artistName} </h1>
                 <h1 className={style.stockpercentage}><FavoriteButton /> </h1>
