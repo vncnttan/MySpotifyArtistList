@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app'
 import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
 
 const client = new ApolloClient({
-  uri: 'http://127.0.0.1:8080/',
+  uri: 'http://127.0.0.1:8080/query',
   cache: new InMemoryCache(),
 });
 

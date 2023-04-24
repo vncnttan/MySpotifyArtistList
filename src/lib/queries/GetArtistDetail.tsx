@@ -1,6 +1,6 @@
 import {gql} from "@apollo/client"
 
-export const getAllArtistDetail = gql `query ($artistName: String!) {
+export const GET_ARTIST_DETAIL = gql `query ($artistName: String!) {
     artist (name: $artistName){
       name
       image
