@@ -1,0 +1,27 @@
+.container{
+    margin: 2rem 0;
+}
+
+.artistImage{
+    display: inline;
+    border-radius: 10rem;
+}
+
+.artistNameHeader{
+    display: inline;
+    vertical-align: bottom;
+    margin: 1rem;
+    font-size: 2rem; 
+    font-weight: 800;
+}
+
+@media only screen and (max-width: 600px) {
+    .artistImage{
+        display: block;
+    }
+
+    .artistNameHeader{
+        display: block;
+        margin-left: 0rem;
+    }
+}
