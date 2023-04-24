@@ -15,6 +15,21 @@
     font-weight: 800;
 }
 
+
+.albumContainer{
+    margin: 2rem 0.5rem;
+}
+
+.albumTitle{
+    font-weight: 600;
+}
+
+.trackDetail{
+    margin: 0 0.5rem;
+    font-size: 1rem;
+    color: var(--actual-grey);
+}
+
 @media only screen and (max-width: 600px) {
     .artistImage{
         display: block;
@@ -23,5 +38,13 @@
     .artistNameHeader{
         display: block;
         margin-left: 0rem;
+    }
+
+    .trackPreview{
+        display: none;
+    }
+
+    .trackDetail{
+        font-size: 0.5rem;
     }
 }

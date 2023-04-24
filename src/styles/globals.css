@@ -10,6 +10,7 @@
   --highlight-secondary-gray: #c0c1bf;
   --secondary-gray: #e3e6e1;
   --gray: #116930;
+  --actual-grey: #808180;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -21,6 +22,7 @@
     --highlight-secondary-gray: #127234;
     --secondary-gray: #1DB954;
     --gray: #116d31;
+    --actual-grey: #808180;
   }
 }
 
