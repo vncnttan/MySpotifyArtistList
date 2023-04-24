@@ -1,7 +1,6 @@
 import style from "./navbar.module.css"
 import NavbarBtn from "./Navbar-btn"
 import { faHouse, faHeart, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
-import Link from "next/link"
 
 export default function Navbar(){
     return (

@@ -13,7 +13,7 @@ export default function Layout({...props}:Props){
         <>
         <div >
             <Head>
-                <title>{"investNJoy | " + props.title}</title>
+                <title>{"MSAL | " + props.title}</title>
             </Head>
             <div className={style.container}>{props.children}</div>
         </div>
