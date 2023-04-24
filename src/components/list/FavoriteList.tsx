@@ -16,7 +16,7 @@ export default function FavoriteList(){
 export function ListBox(){
     return (
         <div className={style.listbox}>
-            <StockCardContent />
+            <StockCardContent artistName={""} />
         </div>
     )
 }
