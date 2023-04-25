@@ -21,6 +21,19 @@ export default function SearchComponent(){
         }
     })
 
+    const SearchResult = ()=>{
+        if(searchInput.length <= 0){
+            return <h1>Try typing on the keyword</h1>
+        }
+        if (loading) {
+            return <h1>Loading...</h1>
+        } else if (error){
+            return <h1>There is an error fetching the data</h1>
+        } else {
+            return <ListBox artistName={data.artist.name} />
+        }
+    }
+
     return (
         <div style={{margin: "0 1rem"}}>
             <FontAwesomeIcon icon={faSearch} style={{
@@ -32,7 +45,7 @@ export default function SearchComponent(){
                 }}/>
             <input className={style.searchbar} type="text" placeholder="Search ..." onChange={handleChange} value={searchInput}/>
             <h1 style={{marginTop: "3rem"}}>Top Matching Artist: </h1>
-            <ListBox artistName={data.artists.name} />
+            <SearchResult />
         </div>  
     )
 }
