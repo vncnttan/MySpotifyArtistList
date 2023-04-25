@@ -4,19 +4,21 @@ import style from "./list.module.css"
 export default function FavoriteList(){
     return (
         <div>
-            <ListBox/>
-            <ListBox/>
-            <ListBox/>
-            <ListBox/>
-            <ListBox/>
+            <ListBox artistName=""/>
         </div>
     )
 }
 
-export function ListBox(){
+interface Props {
+    artistName ?: string;
+    albumName ?: string;
+    songName ?: string;
+}
+
+export function ListBox({...props}:Props){
     return (
         <div className={style.listbox}>
-            <StockCardContent artistName={""} />
+            <StockCardContent artistName={props.artistName} />
         </div>
     )
 }

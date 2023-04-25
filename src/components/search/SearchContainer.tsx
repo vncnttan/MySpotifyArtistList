@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { ChangeEvent, FormEvent, useState } from "react"
 
 
-export default function SearchBar(){
+export default function SearchComponent(){
     const [searchInput, setSearchInput] = useState("");
     
     const handleChange = (e : ChangeEvent<HTMLInputElement>)=>{
@@ -22,18 +22,9 @@ export default function SearchBar(){
                 // borderRadius: "0.5rem",
                 // verticalAlign: "baseline"
                 }}/>
-            <input className={style.searchbar} type="text" placeholder="Search ..." onChange={handleChange} />
+            <input className={style.searchbar} type="text" placeholder="Search ..." onChange={handleChange} value={searchInput}/>
+            <h1 style={{marginTop: "3rem"}}>Top Matching Artist: </h1>
+            <ListBox artistName={searchInput} />
         </div>  
-    )
-}
-
-export function SearchResult(){
-    return (
-        <div>
-            <ListBox />
-            <ListBox />
-            <ListBox />
-            <ListBox />
-        </div>
     )
 }

@@ -49,6 +49,6 @@ export function StockCardContent({...props}:Props){
 
 export function FavoriteButton(){
     return (
-        <FontAwesomeIcon icon={faStar}/>
+        <FontAwesomeIcon style={{color: "yellow"}} icon={faStar}/>
     )
 }
