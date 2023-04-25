@@ -10,15 +10,23 @@ export default function FavoriteList(){
 }
 
 interface Props {
-    artistName ?: string;
-    albumName ?: string;
-    songName ?: string;
+    artistName ?: string | undefined;
+    albumName ?: string | undefined;
+    songName ?: string | undefined;
 }
 
 export function ListBox({...props}:Props){
-    return (
-        <div className={style.listbox}>
-            <StockCardContent artistName={props.artistName} />
-        </div>
-    )
+    if(props.albumName){
+        return (
+            <div className={style.listbox}>
+                <StockCardContent artistName={props.artistName} />
+            </div>
+        )
+    }  else { 
+        return (
+            <div className={style.listbox}>
+                <StockCardContent artistName={props.artistName} />
+            </div>
+        )
+    }
 }

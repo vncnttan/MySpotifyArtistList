@@ -3,6 +3,8 @@ import { ListBox } from "../list/FavoriteList"
 import { faSearch } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { ChangeEvent, FormEvent, useState } from "react"
+import { GET_ARTIST_DETAIL } from "@component/lib/queries/GetArtistDetail"
+import { useQuery } from "@apollo/client"
 
 
 export default function SearchComponent(){
@@ -12,6 +14,12 @@ export default function SearchComponent(){
         e.preventDefault();
         setSearchInput(e.target.value);
     }
+
+    const {loading, error, data} = useQuery(GET_ARTIST_DETAIL, {
+        variables: {
+            artistName: searchInput
+        }
+    })
 
     return (
         <div style={{margin: "0 1rem"}}>
@@ -24,7 +32,7 @@ export default function SearchComponent(){
                 }}/>
             <input className={style.searchbar} type="text" placeholder="Search ..." onChange={handleChange} value={searchInput}/>
             <h1 style={{marginTop: "3rem"}}>Top Matching Artist: </h1>
-            <ListBox artistName={searchInput} />
+            <ListBox artistName={data.artists.name} />
         </div>  
     )
 }
