@@ -2,13 +2,17 @@ import style from "./search.module.css"
 import { ListBox } from "../list/FavoriteList"
 import { faSearch } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { ChangeEvent } from "react"
+import { ChangeEvent, FormEvent, useState } from "react"
 
-const handleChange = (e : ChangeEvent)=>{
-    e.preventDefault();
-}
 
 export default function SearchBar(){
+    const [searchInput, setSearchInput] = useState("");
+    
+    const handleChange = (e : ChangeEvent<HTMLInputElement>)=>{
+        e.preventDefault();
+        setSearchInput(e.target.value);
+    }
+
     return (
         <div style={{margin: "0 1rem"}}>
             <FontAwesomeIcon icon={faSearch} style={{
@@ -18,7 +22,7 @@ export default function SearchBar(){
                 // borderRadius: "0.5rem",
                 // verticalAlign: "baseline"
                 }}/>
-            <input className={style.searchbar} type="text" placeholder="Search ..." onChange={handleChange}/>
+            <input className={style.searchbar} type="text" placeholder="Search ..." onChange={handleChange} />
         </div>  
     )
 }
