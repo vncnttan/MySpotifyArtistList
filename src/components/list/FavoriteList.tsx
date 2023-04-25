@@ -7,8 +7,8 @@ interface Props {
 }
 
 export default function FavoriteList({...props}: Props){
-    if(props.FavList != undefined){
 
+    if(props.FavList != undefined){
         return (
             <div>
                 {props.FavList.map((favArtist : string, index : Key)=>{
