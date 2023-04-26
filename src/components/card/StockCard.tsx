@@ -2,7 +2,7 @@ import style from "./card.module.css"
 import { faStar } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Link from "next/link"
-import { useState } from "react"
+import { MouseEventHandler, useEffect, useState } from "react"
 
 export default function StockCard(){
     let artists = [
@@ -42,36 +42,69 @@ export function StockCardContent({...props}:Props){
         <Link href={"/detail/" + props.artistName + "/"}>
             <div className={style.cardcontent}>
                 <h1 className={style.stockname}> {props.artistName} </h1>
-                <h1 className={style.stockpercentage}><FavoriteButton /> </h1>
+                <h1 className={style.stockpercentage}><FavoriteButton artistName={props.artistName}/> </h1>
             </div>
         </Link>
     )
 }
 
 export function FavoriteButton({...props}:Props){
-    let [favlist, setfavlist] = useState(()=>{
-        if(typeof window !== 'undefined'){
-            let favlistjson = localStorage.getItem("favlist")
-            let localStorageValue;
-        
-            if(!favlistjson){
-                localStorageValue = [{}]
-            } else {
-                localStorageValue = JSON.parse(favlistjson);
-            }
-            return localStorageValue;
+    // let [favlist, setfavlist] = useState(()=>{
+    //     if(typeof window !== 'undefined'){
+    //         let favlistjson = localStorage.getItem("favlist")
+    //         let localStorageValue;
+            
+    //         if(!favlistjson){
+    //             localStorageValue = [];
+    //         } else {
+    //             localStorageValue = JSON.parse(favlistjson);
+    //         }
+    //         return localStorageValue;
+    //     }
+    // })
+    
+    const [isFav, setIsFav]  = useState(Boolean);
+    
+    useEffect(() => {
+        let favlistjson = localStorage.getItem("favlist")
+        if(!favlistjson){
+            console.log(props.artistName + " no favlistjson");
+            setIsFav(false);
         } else {
-            return [{}]
+            let localStorageValue = JSON.parse(favlistjson);
+            if(localStorageValue.includes(props.artistName)){
+                console.log(props.artistName + " included");
+                setIsFav(true);
+            } else {
+                console.log(props.artistName + " doesnt included");
+                setIsFav(false);
+            }
         }
-    })
+    }, []);
     
-    let isFav = false;
+    // if(favlist && favlist.includes(props.artistName)){
+    //     isFav = false;
+    // }
     
-    if(favlist.includes(props.artistName)){
-        isFav = true;
+    let handleClick = (e : any)=>{
+        e.preventDefault();
+        if(!isFav){
+            setIsFav(true);
+            if(typeof window !== 'undefined'){
+                let favlistjson = localStorage.getItem("favlist")
+                let localStorageValue
+                if(!favlistjson){
+                    localStorageValue = []
+                } else {
+                    localStorageValue = JSON.parse(favlistjson);
+                }
+                localStorageValue = [...localStorageValue, props.artistName]
+                localStorage.setItem("favlist", JSON.stringify(localStorageValue));
+            }
+        }
     }
 
     return (
-        <FontAwesomeIcon style={isFav ? {color: "yellow"} : {color: "white"}} icon={faStar}/>
+        <FontAwesomeIcon onClick={handleClick} style={isFav ? {color: "yellow"} : {color: "white"}} icon={faStar}/>
     )
 }
