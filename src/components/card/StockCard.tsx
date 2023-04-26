@@ -2,6 +2,7 @@ import style from "./card.module.css"
 import { faStar } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Link from "next/link"
+import { useRouter } from "next/router"
 import { MouseEventHandler, useEffect, useState } from "react"
 
 export default function StockCard(){
@@ -49,10 +50,17 @@ export function StockCardContent({...props}:Props){
     )
 }
 
+
 export function FavoriteButton({...props}:Props){
+    const router = useRouter();
     const [isFav, setIsFav]  = useState(Boolean);
     
     useEffect(() => {
+        refreshStarButton();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+    
+    const refreshStarButton = ()=>{
         let favlistjson = localStorage.getItem("favlist")
         if(!favlistjson){
             console.log(props.artistName + " no favlistjson");
@@ -67,8 +75,7 @@ export function FavoriteButton({...props}:Props){
                 setIsFav(false);
             }
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }
     
     // if(favlist && favlist.includes(props.artistName)){
     //     isFav = false;
@@ -103,7 +110,12 @@ export function FavoriteButton({...props}:Props){
                     localStorageValue = localStorageValue.filter((e: string | undefined) => e !== props.artistName)
 
                     localStorage.setItem("favlist", JSON.stringify(localStorageValue));
-                    setIsFav(false);
+                    if(router.pathname != "/favorites"){
+                        refreshStarButton();
+                    }
+                    if(props.onfavchange){
+                        props.onfavchange()
+                    }
                 }
             }
         }
