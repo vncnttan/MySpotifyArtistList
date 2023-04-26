@@ -34,7 +34,8 @@ export default function StockCard(){
 }
 
 interface Props{
-    artistName ?: String,
+    artistName ?: string,
+    onfavchange ?: () => void;
 }
 
 export function StockCardContent({...props}:Props){
@@ -42,27 +43,13 @@ export function StockCardContent({...props}:Props){
         <Link href={"/detail/" + props.artistName + "/"}>
             <div className={style.cardcontent}>
                 <h1 className={style.stockname}> {props.artistName} </h1>
-                <h1 className={style.stockpercentage}><FavoriteButton artistName={props.artistName}/> </h1>
+                <h1 className={style.stockpercentage}><FavoriteButton artistName={props.artistName} onfavchange={props.onfavchange}/> </h1>
             </div>
         </Link>
     )
 }
 
 export function FavoriteButton({...props}:Props){
-    // let [favlist, setfavlist] = useState(()=>{
-    //     if(typeof window !== 'undefined'){
-    //         let favlistjson = localStorage.getItem("favlist")
-    //         let localStorageValue;
-            
-    //         if(!favlistjson){
-    //             localStorageValue = [];
-    //         } else {
-    //             localStorageValue = JSON.parse(favlistjson);
-    //         }
-    //         return localStorageValue;
-    //     }
-    // })
-    
     const [isFav, setIsFav]  = useState(Boolean);
     
     useEffect(() => {
@@ -101,6 +88,23 @@ export function FavoriteButton({...props}:Props){
                 }
                 localStorageValue = [...localStorageValue, props.artistName]
                 localStorage.setItem("favlist", JSON.stringify(localStorageValue));
+            }
+        } else {
+            if(props.artistName){
+                if(typeof window !== 'undefined'){
+                    let favlistjson = localStorage.getItem("favlist");
+
+                    let localStorageValue;
+                    if(!favlistjson){
+                        localStorageValue = []
+                    } else {
+                        localStorageValue = JSON.parse(favlistjson);
+                    }
+                    localStorageValue = localStorageValue.filter((e: string | undefined) => e !== props.artistName)
+
+                    localStorage.setItem("favlist", JSON.stringify(localStorageValue));
+                    setIsFav(false);
+                }
             }
         }
     }

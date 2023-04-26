@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 
 interface Props{
     icon ?: IconDefinition;
-    tag ?: String;
+    tag ?: string;
     link ?: string;
 }
 

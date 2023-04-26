@@ -1,7 +1,7 @@
 import style from "./title.module.css"
 
 interface Props{
-    title ?: String
+    title ?: string
 }
 
 export default function TitleHeader({...props}:Props){

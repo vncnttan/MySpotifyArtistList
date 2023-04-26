@@ -9,13 +9,17 @@ interface Props {
 export default function FavoriteList(){
     let [FavList, setFavList] = useState(Array<string>);
     
-    useEffect(()=>{
+    const onFavChange = ()=>{
         let favlistjson = localStorage.getItem("favlist")
         if(!favlistjson){
-            setFavList([]);
+            setFavList([])
         } else {
             setFavList(JSON.parse(favlistjson));
         }
+    }
+    
+    useEffect(()=>{
+        onFavChange()
     }, []);
 
     if(typeof FavList === 'undefined'){
@@ -25,7 +29,7 @@ export default function FavoriteList(){
     return (
         <div>
             {FavList.map((favArtist : string, index : Key)=>{
-                return <ListBox artistName={favArtist} key={index}/>
+                return <ListBox artistName={favArtist} key={index} onfavchange={onFavChange}/>
             })}
         </div>
     )
@@ -33,10 +37,11 @@ export default function FavoriteList(){
 
 interface Props {
     artistName ?: string | undefined;
+    onfavchange ?: () => void;
 }
 
 export function ListBox({...props}:Props){
     return <div className={style.listbox}>
-        <StockCardContent artistName={props.artistName} />
+        <StockCardContent artistName={props.artistName} onfavchange={props.onfavchange}/>
     </div>
 }
