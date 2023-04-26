@@ -6,7 +6,7 @@ export default function Favorites(){
     return (
     <Layout title="Favorites">
         <TitleHeader title="Favorite Page" />
-        <FavoriteList FavList={}/>
+        <FavoriteList/>
     </Layout>
     );
 }

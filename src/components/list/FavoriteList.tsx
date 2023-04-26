@@ -6,12 +6,14 @@ interface Props {
     FavList ?: string[];
 }
 
-export default function FavoriteList({...props}: Props){
+export default function FavoriteList(){
+    [favList, setfavList] = useState(()=>[
 
-    if(props.FavList != undefined){
+    ])
+    if(favList != undefined){
         return (
             <div>
-                {props.FavList.map((favArtist : string, index : Key)=>{
+                {favList.map((favArtist : string, index : Key)=>{
                     return <ListBox artistName={favArtist} key={index}/>
                 })}
             </div>
