@@ -1,4 +1,4 @@
-import { Key, useState } from "react";
+import { Key, useEffect, useState } from "react";
 import { StockCardContent } from "../card/StockCard"
 import style from "./list.module.css"
 
@@ -7,22 +7,25 @@ interface Props {
 }
 
 export default function FavoriteList(){
-    let [FavList, setFavList] = useState(()=>{
-        let favlistjson = localStorage.getItem("favlist")
-        let localStorageValue;
+    let [FavList, setFavList] = useState(Array<string>);
     
+    useEffect(()=>{
+        let favlistjson = localStorage.getItem("favlist")
         if(!favlistjson){
-            localStorageValue = [{}]
+            setFavList([]);
         } else {
-            localStorageValue = JSON.parse(favlistjson);
+            setFavList(JSON.parse(favlistjson));
         }
-        return localStorageValue;
-    })
+    }, []);
+
+    if(typeof FavList === 'undefined'){
+        return <div></div>
+    }
 
     return (
         <div>
             {FavList.map((favArtist : string, index : Key)=>{
-                <ListBox artistName={favArtist} key={index}/>
+                return <ListBox artistName={favArtist} key={index}/>
             })}
         </div>
     )

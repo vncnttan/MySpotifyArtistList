@@ -80,6 +80,7 @@ export function FavoriteButton({...props}:Props){
                 setIsFav(false);
             }
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     
     // if(favlist && favlist.includes(props.artistName)){
