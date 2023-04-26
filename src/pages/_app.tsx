@@ -15,7 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const provider = {
     userLang,
     dict: dictionaryList[userLang as keyof typeof dictionaryList],
-    changeTheme: () =>{
+    changeLang: () =>{
       if(userLang == 'en'){
         setUserLang('id');
       } else {

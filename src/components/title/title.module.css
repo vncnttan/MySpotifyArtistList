@@ -1,4 +1,15 @@
 .title{
     font-size: 1.5rem;
     margin: 1rem;
+    display: inline;
+}
+
+.langbtn{
+    font-size: 1rem;
+    float: right;
+    margin-right: 1rem;
+    padding: 0.4rem;
+    width: 50px;
+    border-radius: 0.5rem;
+    background-color: var(--secondary-gray);
 }

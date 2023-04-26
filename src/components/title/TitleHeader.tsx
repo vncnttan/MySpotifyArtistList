@@ -9,5 +9,10 @@ interface Props{
 export default function TitleHeader({...props}:Props){
     let lang = useContext(LanguageContext);
 
-    return <h1 className={style.title}>{props.title}</h1>
+    return (
+        <div>
+            <h1 className={style.title}>{props.title}</h1>
+            <button className={style.langbtn} type="submit" onClick={lang.changeLang}>{lang.userLang}</button>
+        </div>
+    )
 }
