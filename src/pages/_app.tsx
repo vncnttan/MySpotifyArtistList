@@ -9,17 +9,6 @@ const client = new ApolloClient({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
-  
-  let [FavList, setFavList] = useState(()=>{
-    let localStorageJson = localStorage.getItem("favlist");
-    let favlist = []
-    if(localStorageJson){
-      favlist = JSON.parse(localStorageJson)
-    }
-
-    return favlist
-  });
-
   return (
   <ApolloProvider client={client}>
     <Component {...pageProps}/>

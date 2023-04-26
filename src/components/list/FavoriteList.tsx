@@ -1,3 +1,4 @@
+import { Key, useState } from "react";
 import { StockCardContent } from "../card/StockCard"
 import style from "./list.module.css"
 
