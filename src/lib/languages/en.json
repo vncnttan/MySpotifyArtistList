@@ -1,0 +1,9 @@
+{
+    "HomePageNavbar": "List",
+    "FavoritePageNavbar": "Favorite",
+    "SearchPageNavbar": "Search",
+    "HomeHeader": "List Page",
+    "FavoriteHeader": "Favorite Page",
+    "SearchHeader": "Search Page",
+    "DetailHeader": "Detail Page"
+}

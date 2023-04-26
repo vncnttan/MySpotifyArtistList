@@ -50,7 +50,6 @@ export function StockCardContent({...props}:Props){
     )
 }
 
-
 export function FavoriteButton({...props}:Props){
     const router = useRouter();
     const [isFav, setIsFav]  = useState(Boolean);
