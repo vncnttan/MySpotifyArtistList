@@ -28,11 +28,12 @@ export default function SearchComponent(){
         if (loading) {
             return <h1>Loading...</h1>
         } else if (error){
-            return <h1>There is an error fetching the data: Network problem, or no artist found!</h1>
+            return <h1>There is an error fetching the data</h1>
         } else {
             return <ListBox artistName={data.artist.name} />
         }
     }
+
     return (
         <div style={{margin: "0 1rem"}}>
             <FontAwesomeIcon icon={faSearch} style={{
