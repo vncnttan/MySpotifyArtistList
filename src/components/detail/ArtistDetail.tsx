@@ -20,7 +20,7 @@ export function ArtistDetailHeader({...props} : Props){
     return (
         <div className={style.container}>
             <Image src={props.data.artist.image} alt={props.data.artist.name + "'s image."} width={150} height={150} className={style.artistImage}/>
-            <h1 className={style.artistNameHeader}> {props.data.artist.name} <FavoriteButton artistName={props.data.artist.name }/></h1>
+            <h1 className={style.artistNameHeader}> {props.data.artist.name} <FavoriteButton artistName={props.data.artist.name}/></h1>
         </div>
     )
 }
