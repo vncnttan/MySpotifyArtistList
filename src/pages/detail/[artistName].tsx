@@ -21,13 +21,13 @@ export default function Detail(){
 
     if(loading) return (
         <Layout title="Details">
-            <Title title="Detail Page"/>
+            <Title title={lang.dict.DetailHeader}/>
             <h1 style={{margin: "1rem"}}>{lang.dict.LoadingPrompt}</h1>
         </Layout>
     )
     else if (error) return (
         <Layout title="Details">
-            <Title title="Detail Page"/>
+            <Title title={lang.dict.DetailHeader}/>
             <h1 style={{margin: "1rem"}}>{lang.dict.ErrorFetching}<br />
             <Link href="/"> <b>{lang.dict.BackHome}</b> </Link> </h1>
         </Layout>
