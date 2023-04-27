@@ -14,7 +14,7 @@ export default function Layout({...props}:Props){
         <div >
             <Head>
                 <title>{"MSAL | " + props.title}</title>
-                <link rel="icon" href="./logo.svg" />
+                <link rel="icon" type="svg" sizes="32x32" href="./logo.svg" />
             </Head>
             <div className={style.container}>{props.children}</div>
         </div>
