@@ -4,6 +4,11 @@
     "SearchPageNavbar": "Pindai",
     "HomeHeader": "Rekomendasi Artis",
     "FavoriteHeader": "Halaman Favorit",
-    "SearchHeader": "Search Page",
-    "DetailHeader": "Detail Page"
+    "SearchHeader": "Cari Berdasarkan Artis",
+    "DetailHeader": "Info Artis",
+    "LoadingPrompt": "Memuat...",
+    "ErrorFetching": "Error: Tolong periksa koneksi internet dan coba lagi nanti",
+    "BackHome": "Kembali ke halaman utama",
+    "FieldEmpty": "Coba cari dengan mengetik di kotak pindai",
+    "TopMatchingArtistHeader": "Hasil Pencarian: "
 }

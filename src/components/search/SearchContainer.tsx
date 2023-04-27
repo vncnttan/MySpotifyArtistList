@@ -2,12 +2,15 @@ import style from "./search.module.css"
 import { ListBox } from "../list/FavoriteList"
 import { faSearch } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { ChangeEvent, FormEvent, useState } from "react"
+import { ChangeEvent, useContext, useState } from "react"
 import { GET_ARTIST_DETAIL } from "@component/lib/queries/GetArtistDetail"
 import { useQuery } from "@apollo/client"
+import { LanguageContext } from "@component/lib/context/LanguageContext"
 
 
 export default function SearchComponent(){
+    let lang = useContext(LanguageContext);
+
     const [searchInput, setSearchInput] = useState("");
     
     const handleChange = (e : ChangeEvent<HTMLInputElement>)=>{
@@ -23,12 +26,12 @@ export default function SearchComponent(){
 
     const SearchResult = ()=>{
         if(searchInput.length <= 0){
-            return <h1>Try typing on the keyword</h1>
+            return <h1>{lang.dict.FieldEmpty}</h1>
         }
         if (loading) {
-            return <h1>Loading...</h1>
+            return <h1>{lang.dict.LoadingPrompt}</h1>
         } else if (error){
-            return <h1>There is an error fetching the data</h1>
+            return <h1>{lang.dict.LoadingPrompt}</h1>
         } else {
             return <ListBox artistName={data.artist.name} />
         }
@@ -44,7 +47,7 @@ export default function SearchComponent(){
                 // verticalAlign: "baseline"
                 }}/>
             <input className={style.searchbar} type="text" placeholder="Search ..." onChange={handleChange} value={searchInput}/>
-            <h1 style={{marginTop: "3rem"}}>Top Matching Artist: </h1>
+            <h1 style={{marginTop: "3rem"}}>{lang.dict.TopMatchingArtistHeader}</h1>
             <SearchResult />
         </div>  
     )

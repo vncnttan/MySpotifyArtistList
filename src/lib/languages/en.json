@@ -5,5 +5,10 @@
     "HomeHeader": "List Page",
     "FavoriteHeader": "Favorite Page",
     "SearchHeader": "Search Page",
-    "DetailHeader": "Detail Page"
+    "DetailHeader": "Detail Page",
+    "LoadingPrompt": "Loading...",
+    "ErrorFetching": "Error: Please Try Again Later !",
+    "BackHome" : "Back to home",
+    "FieldEmpty": "Try to type on the search bar",
+    "TopMatchingArtistHeader": "Top Matching Artist: "
 }
