@@ -25,6 +25,10 @@ export default function FavoriteList(){
     if(typeof FavList === 'undefined'){
         return <div></div>
     }
+    
+    if(FavList.length == 0){
+        return <div>No Favorites yet!</div>
+    }
 
     return (
         <div>
