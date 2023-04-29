@@ -1,35 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### MySpotifyArtistList (MSAL)
+NJ 23-1 Vincent Tanjaya
 
-## Getting Started
+	MSAL is a primarily mobile website where you can list your all-time favourite Spotify artist and show it to other. MSAL has 4 main pages:
+•	List Page: Top 20 Spotify Artist recommendation from the developer. You can add some artist to your own personal favourite page and see the artist details.
+•	Favourite Page: Your personalized favourite artist page where you can add/remove artist to your favourite page and see the artist details.
+•	Search Page: Where you can search the name of a spotify artist and you can add it to your favourite page or see the artist details
+•	Detail Page: See more information about the artist name, and discography (album and tracks)
 
-First, run the development server:
+Link:
+Source code: vncnttan/MySpotifyArtistList: Qualification REACT (github.com)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+MSAL is best viewed in the mobile device, although it can also be viewed in desktop devices.
+  
+		        Image 1.0 MSAL on desktop device  		   Image 1.1 MSAL on mobile
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ 
+#### ArtistObject
+	The data is fetched to this object by graphql, where the artistName is specified first.
+ 
+Image 1.1 Artist Object
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+#### Language Option
+	MSAL offers two language option: Indonesian and English, to change language, just click on the language button. To apply language changes, react uses Language Context, and get the data from the dictionary.json
+     
+    Image 2.1 Indonesian mode  	   Image 2.2 English Mode      Image 2.3 Change Lang Button
+ 
+#### Homepage (List Page)
+ 
+Image 3.1 List Page
+List Page have a card component that list all the recommended artist. The star button can be clicked to add that artist to your favorite page. You also can click the card to redirect you the detail page where you can see more about the artist information.
+The Navbar is purposely put in the bottom for a better user experience in mobile devices.
+Components: 
+•	Layout (Title, ChangeLanguage Button, etc.)
+•	TitleHeader
+•	Navbar
+•	NavbarBtn
+•	Card Container
+•	Card Content
+•	 Favorite Button
+ 
+#### Favorite Page
+ 
+Image 4.1 Favorite Page
+	Favorite page is the page that is used to list all user’s favorite artist (marked by the yellow star). Favorite page get and store the data from the local storage, for everytime the user click the star (favorite) button. You can also remove unwanted favorite artist by clicking the star button again, it should disappear from the list.
+ 
+Image 4.2 Local Storage
+	
+Components:
+•	Layout
+•	TitleHeader
+•	Navbar
+•	NavbarBtn
+•	ListBox Container 
+•	Card Content
+•	Favorite Button
 
 ## Deploy on Vercel
 
