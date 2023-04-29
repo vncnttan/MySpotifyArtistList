@@ -27,7 +27,7 @@ export default function FavoriteList(){
     }
     
     if(FavList.length == 0){
-        return <div>No Favorites yet!</div>
+        return <div style={{margin: "2rem"}}>No Favorites yet!</div>
     }
 
     return (
