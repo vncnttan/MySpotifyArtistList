@@ -4,7 +4,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client
 import { useState } from 'react';
 import { LanguageContext, dictionaryList } from '../lib/context/LanguageContext'
 const client = new ApolloClient({
-  uri: 'https://graphql-spotify-mbee.up.railway.app/query',
+  uri: 'http://178.128.22.186:8080/query',
   cache: new InMemoryCache(),
 });
 

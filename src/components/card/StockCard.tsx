@@ -88,11 +88,11 @@ export function FavoriteButton({...props}:Props){
                 let favlistjson = localStorage.getItem("favlist")
                 let localStorageValue
                 if(!favlistjson){
-                    localStorageValue = []
+                    localStorageValue = [props.artistName]
                 } else {
                     localStorageValue = JSON.parse(favlistjson);
+                    localStorageValue = [...localStorageValue, props.artistName]
                 }
-                localStorageValue = [...localStorageValue, props.artistName]
                 localStorage.setItem("favlist", JSON.stringify(localStorageValue));
             }
         } else {
@@ -106,7 +106,7 @@ export function FavoriteButton({...props}:Props){
                     } else {
                         localStorageValue = JSON.parse(favlistjson);
                     }
-                    localStorageValue = localStorageValue.filter((e: string | undefined) => e !== props.artistName)
+                    localStorageValue = localStorageValue.filter((ev: string | undefined) => ev !== props.artistName)
 
                     localStorage.setItem("favlist", JSON.stringify(localStorageValue));
                     if(router.pathname != "/favorites"){
